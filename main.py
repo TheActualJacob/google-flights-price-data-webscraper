@@ -16,11 +16,11 @@ import sys
 while True:
     timern = datetime.datetime.now()
     day = datetime.date.today()
-    #time.sleep(59)
+    time.sleep(59)
     
-    if True:
+    #if True:
         
-    #if timern.hour == 0 and timern.minute == 23 and day.weekday() == 5:
+    if timern.hour == 0 and timern.minute == 23 and day.weekday() == 5:
 
         date = 'December 17th'
 
