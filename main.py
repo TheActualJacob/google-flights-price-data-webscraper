@@ -13,16 +13,20 @@ from fake_useragent import UserAgent
 import datetime
 import sys
 
+c=1
 while True:
     timern = datetime.datetime.now()
     day = datetime.date.today()
-    time.sleep(59)
+    
+    print(c, ' cycle')
+    c = c+1
+
     
     #if True:
         
-    if timern.hour == 0 and timern.minute == 23 and day.weekday() == 5:
+    if timern.hour == 0 and timern.minute == 40 and day.weekday() == 1:
 
-        date = 'December 17th'
+        date = 'December 20th'
 
         req =urllib.request
 
@@ -58,29 +62,77 @@ while True:
             time.sleep(3)
 
             #telling the bot to find the date change button
-            button = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[1]/div/div[1]/div/input')
-            button.click()
+            while True:
+                try:
+                    print('test')
+                    button = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[1]/div/div[1]/div/input')
+                    button.click()
+                    print(2)
+                    break
+
+                except:
+                    driver.get(url)
+                    print(1)
+                    time.sleep(1)
+                    
+
+                
+            
+            
             time.sleep(2)
 
             #telling but to find the 
-            innerbutton = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]/div[1]/div[1]/div/input')
 
-            #entering the date as the variable we defined earlier, "today"
-            innerbutton.send_keys(date)
+            while True:
+                try:
+                    innerbutton = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]/div[1]/div[1]/div/input')
+
+                    #entering the date as the variable we defined earlier, "today"
+                    innerbutton.send_keys(date)
+                    print(2)
+                    break
+
+                except:
+                    print(1)
+                    time.sleep(1)
+               
             time.sleep(2)
 
 
             #telling but to find the buttons necassary to save the changes to the dates
-            done = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[3]/div[3]/div/button')
-            done.click()
+            while True:
+                try:
+                    done = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[3]/div[3]/div/button')
+                    done.click()
+                    print(2)
+                    break
+                except:
+                    print(1)
+                    time.sleep(1)
+                
             time.sleep(3)
-            oneway = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[1]/div[1]/div/div[1]/div[1]/div/button')
-            oneway.click()
+
+            while True:
+                try:
+                    oneway = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[1]/div[1]/div/div[1]/div[1]/div/button')
+                    oneway.click()
+                    print(2)
+                    break
+                except:
+                    print(1)
+                    time.sleep(1)
+              
             time.sleep(2)
 
             #telling the bot to find the one way button and click
-            onewaybutton = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[1]/div[1]/div/div[1]/div[2]/div[2]/ul/li[2]')
-            onewaybutton.click()
+            while True:
+                try:
+                    onewaybutton = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[1]/div[1]/div/div[1]/div[2]/div[2]/ul/li[2]')
+                    onewaybutton.click()
+                    break
+                except:
+                    time.sleep(1)
+                
             time.sleep(3)
 
             #getting the javascript rendered html from the bot
@@ -170,10 +222,14 @@ while True:
                 f.close()
             print(dataframe.median())
 
+
+            driver.close()
+
             
 
             time.sleep(2)
         sys.exit()
+    time.sleep(59)
 
 
         
