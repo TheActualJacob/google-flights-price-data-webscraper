@@ -21,14 +21,14 @@ while True:
     
     #if True:
         
-    if timern.hour == 0 and timern.minute == 3 and day.weekday() == 2:
+    if timern.hour == 0 and timern.minute == 7 and day.weekday() == 2:
 
         date = 'December 21st'
 
         req =urllib.request
 
 
-        icaos = ['jfk+to+lax', 'ord+to+jfk', 'lax+to+ord', 'clt+to+atl', 'mia+to+jfk', 'lhr+to+jfk']
+        icaos = ['clt+to+atl', 'mia+to+jfk', 'lhr+to+jfk']
 
         for o in icaos:
 
