@@ -11,17 +11,19 @@ import csv
 from fake_useragent import UserAgent
 import datetime
 import sys
-
+c=1
 while True:
     timern = datetime.datetime.now()
     day = datetime.date.today()
+    print(c, ' cycle')
+    c = c+1
     
     
     #if True:
         
-    if timern.hour == 0 and timern.minute == 46 and day.weekday() == 1:
+    if timern.hour == 0 and timern.minute == 3 and day.weekday() == 2:
 
-        date = 'December 20th'
+        date = 'December 21st'
 
         req =urllib.request
 
