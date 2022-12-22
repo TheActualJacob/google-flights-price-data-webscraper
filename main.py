@@ -22,16 +22,16 @@ while True:
     c = c+1
 
     
-    #if True:
+    if True:
         
-    if timern.hour == 0 and timern.minute == 40 and day.weekday() == 1:
+    #if timern.hour == 4 and timern.minute == 53 and day.weekday() == 3:
 
         date = 'December 20th'
 
         req =urllib.request
 
 
-        icaos = ['jfk+to+lax', 'ord+to+jfk', 'lax+to+ord', 'clt+to+atl', 'mia+to+jfk', 'lhr+to+jfk']
+        icaos = ['tul+to+dtw', 'lax+to+las', 'lax+to+mia']
 
         for o in icaos:
 
@@ -68,12 +68,18 @@ while True:
                     button = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[1]/div/div[1]/div/input')
                     button.click()
                     print(2)
-                    break
+                    
 
                 except:
-                    driver.get(url)
-                    print(1)
+                    i1 = 0
+                    i1 = i1 + 1
                     time.sleep(1)
+                    if i1 == 3:
+                        print('i1 error')
+                        break
+                
+                else:
+                    break
                     
 
                 
@@ -90,11 +96,17 @@ while True:
                     #entering the date as the variable we defined earlier, "today"
                     innerbutton.send_keys(date)
                     print(2)
-                    break
+                    
 
                 except:
-                    print(1)
+                    i2 = 0
+                    i2 = i2 + 1
                     time.sleep(1)
+                    if i2 == 3:
+                        print('i2 error')
+                        break
+                else:
+                    break
                
             time.sleep(2)
 
@@ -105,10 +117,17 @@ while True:
                     done = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[3]/div[3]/div/button')
                     done.click()
                     print(2)
-                    break
+                    
                 except:
-                    print(1)
+                    i3 = 0
+                    i3 = i3 + 1
                     time.sleep(1)
+                    if i3 == 3:
+                        print('i3 error')
+                        break
+                
+                else:
+                    break
                 
             time.sleep(3)
 
@@ -117,10 +136,16 @@ while True:
                     oneway = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[1]/div[1]/div/div[1]/div[1]/div/button')
                     oneway.click()
                     print(2)
-                    break
+                    
                 except:
-                    print(1)
+                    i4 = 0
+                    i4 = i4 + 1
                     time.sleep(1)
+                    if i4 == 3:
+                        print('i4 error')
+                        break
+                else:
+                    break
               
             time.sleep(2)
 
@@ -129,9 +154,17 @@ while True:
                 try:
                     onewaybutton = driver.find_element('xpath', '/html/body/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div/div[1]/div[1]/div/div[1]/div[2]/div[2]/ul/li[2]')
                     onewaybutton.click()
-                    break
+                    
                 except:
+                    i5 = 0
+                    i5 = i5 + 1
                     time.sleep(1)
+                    if i5 == 3:
+                        print('i5 error')
+                        break
+
+                else:
+                    break
                 
             time.sleep(3)
 
