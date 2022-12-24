@@ -24,9 +24,9 @@ while True:
     
     #if True:
         
-    if timern.hour == 0 and timern.minute == 3 and day.weekday() == 4:
+    if timern.hour == 0 and timern.minute == 48 and day.weekday() == 5:
 
-        date = 'December 23rd'
+        date = 'December 24th'
 
         req =urllib.request
 
